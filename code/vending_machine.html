@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending machine</title>
+    <script src="vending_machine.js"></script>
+    <link rel="stylesheet" href="vending_machine.css"/>
+</head>
+<body>
+    <table border="3" width=600 height=550>
+        <tr>
+            <th colspan="4" height=80 class="bgcolor">
+                <span class="read_text">자</span>
+                <span class="yellow_text">판</span>
+                <span class="green_text">기</span>
+            </th>
+        </tr>
+
+        <tr class="bgcolor2">
+            <td>
+                <img src="./img/콜라.jpg" width="50"><br>
+                <input type="button" value="1200￦" class="style" onclick="Money(1, 1200)">
+            </td>
+            <td>
+                <img src="./img/사이다.jpg" width="50"><br>
+                <input type="button" value="1100￦" class="style" onclick="Money(2, 1100)">
+            </td>
+            <td>
+                <img src="./img/환타.jpg" width="50" height="100"><br>
+                <input type="button" value="1300￦" class="style" onclick="Money(3, 1300)">
+            </td>
+            <td>
+                <input type ="button" value="1000원" class="style" onclick="Money(0, 1000)"><br>
+                <input type ="button" value="500원" class="style" onclick="Money(0, 500)"><br>
+                <input type ="button" value="100원" class="style" onclick="Money(0, 100)"><br>
+                <input type="text" value="투입금액" class="style" id="f1" readonly>
+            </td>
+        </tr>
+
+        
+
+        <tr class="bgcolor2">
+            <td>
+                <img src="img/블랙.gif" width="60" height="90"><br>
+                <input type="button" value="1000￦" class="style" onclick="Money(4, 500)">
+            </td>
+            <td>
+                <img src="img/블랙.gif" width="60" height="90"><br>
+                <input type="button" value="1000￦" class="style" onclick="Money(5, 500)">
+            </td>
+            <td>
+                <img src="img/블랙.gif" width="60" height="90"><br>
+                <input type="button" value="1000￦" class="style" onclick="Money(6, 500)">
+            </td>
+            <td>
+                <input type ="button" value="잔돈 반환" onclick="RM()" class="style"><br>
+            </td>
+        </tr>
+
+        <tr class="bgcolor2" height="120">
+            <td colspan="3" id="f2"></td>
+            <td>
+                500원
+                <input type="text" id="f3" class="style" readonly>개<br>
+                100원
+                <input type="text" id="f4" class="style" readonly>개<br>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
