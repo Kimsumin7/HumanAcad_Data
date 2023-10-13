@@ -1,0 +1,9 @@
+.container{
+    background-color: #e1e1e1;
+    padding: 20px;
+}
+
+.container-fluid{
+    background-color: #337ab3;
+    padding: 20px;
+}
