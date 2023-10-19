@@ -19,23 +19,25 @@ public class CalculatorServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        double price1 = Double.parseDouble(request.getParameter("price1"));
-        double price2 = Double.parseDouble(request.getParameter("price2"));
-        double price3 = Double.parseDouble(request.getParameter("price3"));
-        double price4 = Double.parseDouble(request.getParameter("price4"));
+        request.setCharacterEncoding("utf-8"); // 한글 처리 추가
+        double price1 = Double.parseDouble(request.getParameter("product1"));
+        double price2 = Double.parseDouble(request.getParameter("product2"));
+        double price3 = Double.parseDouble(request.getParameter("product3"));
+        double price4 = Double.parseDouble(request.getParameter("product4"));
         double discount = Double.parseDouble(request.getParameter("coupon"));
 
         CalClass calClass = new CalClass(price1, price2, price3, price4, discount);
         calClass.calculateDiscountedPrices();
 
-        response.setContentType("text/html;charset=utf-8");
-        PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.println("<body>");
-        out.println("구입 물건 가격 및 할인 결과:<br>");
-        out.println(calClass.getResult());
-        out.println("</body>");
-        out.println("</html>");
+        double total = price1 + price2 + price3 + price4;
+        double discountAmount = total * discount;
+        double discountedTotal = total - discountAmount;
+
+        request.setAttribute("total", total);
+        request.setAttribute("discountAmount", discountAmount);
+        request.setAttribute("discountedTotal", discountedTotal);
+
+        // 결과 페이지로 이동
+        request.getRequestDispatcher("result.jsp").forward(request, response);
     }
 }

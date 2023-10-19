@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,60 +5,47 @@
 <title>원신 원석 구매 페이지</title>
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<th>물건 이름</th>
-			<th>정가</th>
-			<th>쿠폰</th>
-			<th>할인가</th>
-		</tr>
-		<tr>
-			<td>창세의 결정(1)</td>
-			<td><input type="text" name="price1" value="100"></td>
-			<td><select name="coupon1">
-					<option value="0.05">5% 할인</option>
-					<option value="0.10">10% 할인</option>
-					<option value="0.15">15% 할인</option>
-					<option value="0.20">20% 할인</option>
-			</select></td>
-			<td>${discountedPrice1}</td>
-		</tr>
-		<tr>
-			<td>창세의 결정(2)</td>
-			<td><input type="text" name="price2" value="200"></td>
-			<td><select name="coupon2">
-					<option value="0.05">5% 할인</option>
-					<option value="0.10">10% 할인</option>
-					<option value="0.15">15% 할인</option>
-					<option value="0.20">20% 할인</option>
-			</select></td>
-			<td>${discountedPrice2}</td>
-		</tr>
-		<tr>
-			<td>창세의 결정(3)</td>
-			<td><input type="text" name="price3" value="300"></td>
-			<td><select name="coupon3">
-					<option value="0.05">5% 할인</option>
-					<option value="0.10">10% 할인</option>
-					<option value="0.15">15% 할인</option>
-					<option value="0.20">20% 할인</option>
-			</select></td>
-			<td>${discountedPrice3}</td>
-		</tr>
-		<tr>
-			<td>창세의 결정(4)</td>
-			<td><input type="text" name="price4" value="400"></td>
-			<td><select name="coupon4">
-					<option value="0.05">5% 할인</option>
-					<option value="0.10">10% 할인</option>
-					<option value="0.15">15% 할인</option>
-					<option value="0.20">20% 할인</option>
-			</select></td>
-			<td>${discountedPrice4}</td>
-		</tr>
-	</table>
-	<form action="CheckoutServlet" method="post">
-		<input type="submit" value="계산">
+	<form action="CalculatorServlet" method="post">
+		<table border="1">
+			<tr>
+				<td colspan="4">
+					<h2>원신 원석 구매 페이지(쿠폰지급중)</h2>
+				</td>
+			</tr>
+			<!-- 창세의 결정(1) -->
+			<tr>
+				<td><input type="checkbox" name="product1" value="100">
+					창세의 결정(1)</td>
+				<td>가격: $100</td>
+				<td><img src="창세.png" alt="창세의 결정(1) 이미지"></td>
+			</tr>
+			<!-- 창세의 결정(2) -->
+			<tr>
+				<td><input type="checkbox" name="product2" value="200">
+					창세의 결정(2)</td>
+				<td>가격: $200</td>
+				<td><img src="창세.png" alt="창세의 결정(2) 이미지"></td>
+			</tr>
+			<!-- 창세의 결정(3) -->
+			<tr>
+				<td><input type="checkbox" name="product3" value="300">
+					창세의 결정(3)</td>
+				<td>가격: $300</td>
+				<td><img src="창세.png" alt="창세의 결정(3) 이미지"></td>
+			</tr>
+			<!-- 창세의 결정(4) -->
+			<tr>
+				<td><input type="checkbox" name="product4" value="400">
+					창세의 결정(4)</td>
+				<td>가격: $400</td>
+				<td><img src="창세.png" alt="창세의 결정(4) 이미지"></td>
+			</tr>
+		</table>
+		<form action="CalculatorServlet" method="post">
+		<br> <label for="coupon">할인 쿠폰 (%):</label> <input type="number"
+			id="coupon" name="coupon" step="0.01"> <br> <input
+			type="submit" value="계산하기">
+		</form>
 	</form>
 </body>
 </html>
