@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>간단한 계산기 만들기</title>
+</head>
+<body>
+<h1>간단한 계산기</h1>
+ <form action="CalculatorEx" method="post">
+        <label for="num1">첫 번째 숫자:</label>
+        <input type="number" name="num1" id="num1" required>
+        <br>
+        <label for="num2">두 번째 숫자:</label>
+        <input type="number" name="num2" id="num2" required>
+        <br>
+        <label for="operation">연산자 (+, -, *, /):</label>
+        <input type="text" name="operation" id="operation" required>
+        <br>
+        <input type="submit" value="계산하기">
+    </form>
+</body>
+</html>

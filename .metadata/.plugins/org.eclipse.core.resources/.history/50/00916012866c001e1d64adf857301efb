@@ -1,0 +1,38 @@
+package com.human.ex;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/myname")
+public class NewFileServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public NewFileServlet() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("들어오면 콘솔창에 찍힘");
+        // 전송할 데이터 종료기술 (Typo 수정: reponse -> response)
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<meta charset=\"UTF-8\">");
+        // 타이틀 태그 수정: 불필요한 << 제거
+        out.println("<title>Insert title here</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<p>안녕<br>servlet</p>"); // HTML 태그 수정
+        out.println("</body>");
+        out.println("</html>");
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+}

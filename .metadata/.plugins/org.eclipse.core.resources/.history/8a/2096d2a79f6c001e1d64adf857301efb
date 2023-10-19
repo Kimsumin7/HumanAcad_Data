@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<BR>다음은 servlet으로 사용자 입력 데이터를 처리하는 방법이다
+	servlet get방식으로 데이터 전송<br>
+	1번 방법으로 from태그 사용<br>
+	<from action="GetServlet" method="get">
+		date1:<input tupe="text" name="data1"><br>
+		date2:<input tupe="text" name="data2"><br>
+		date3:<input tupe="text" name="data3"><br>
+		<input type="submit" value="전송"><br>
+</body>
+</html>

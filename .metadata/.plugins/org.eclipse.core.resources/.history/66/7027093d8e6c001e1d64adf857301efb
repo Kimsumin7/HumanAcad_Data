@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>htmlSubPage에서 나의 이름은 홍길동입니다.</h1>
+<link rel="">htmlMain으로 이동
+<br>
+<link rel="">jspMain으로 이동
+<br>
+<link rel="">servleMain으로 이동
+<br>
+</body>
+</html>

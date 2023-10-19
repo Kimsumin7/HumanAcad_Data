@@ -1,0 +1,19 @@
+package com.human.cal;
+
+public class CalClass {
+	private double num1, num2;
+	private String operator="+";
+	private String result="";
+	
+	public String resultString() {
+		if (operator.equals("+")) {
+			result=num1+"+"+num2+"="+(num1+num2);
+		}else if(operator.equals("-")) {
+			result = num1 + "-" + num2 +  "=" + (num1-num2);
+		}else if(operator.equals("/")) {
+			result = num1 + "/" + num2 +  "=" + (num1/num2);
+		}
+	}
+	
+
+}

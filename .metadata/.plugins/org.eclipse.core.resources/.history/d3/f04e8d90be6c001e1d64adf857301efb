@@ -1,0 +1,19 @@
+package com.human.ex;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServleException;
+import javax.servlet.annotaion.Webservlet;
+import javax.servlet.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServleResponse;
+
+public class StarServlet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
