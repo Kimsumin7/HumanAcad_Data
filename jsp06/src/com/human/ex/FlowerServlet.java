@@ -15,7 +15,11 @@ public class FlowerServlet extends HttpServlet{
 	public FlowerServlet() {
 		super();
 	}
-	protected void doGet(HttpServlet)
+	
+	protected void doGet (HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
+		
+	}
 	
 
 }
