@@ -28,8 +28,26 @@ public class LoginServlet extends HttpServlet {
 		String viewPage = "login.jsp";
 		if (command.equals("/login.servlet")) {
 			viewPage = "success.jsp";
-		} else {
-
+		} else if (command.equals("/loginDB.servlet")) {
+			System.out.println("login.lelvletDB");
+			viewPage = "success.jsp";
+			String user_id = request.getParameter("user_id");
+			String user_pw = request.getParameter("user_pw");
+			if (user_id.trim().equals("java") && user_pw.trim().equals("1234")) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user_id", user_id);
+				session.setMaxInactiveInterval(600);
+			}else {
+				viewPage = "login.jsp";
+			}
+		}else if(command.equals("/logout.servlet")) {
+			viewPage="login.jsp";
+			HttpSession session = request.getSession();
+			session.invalidate();
+			System.out.println("logout.servlet");
 		}
+		System.out.println(viewPage);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		dispatcher.forward(request, response);
 	}
 }
