@@ -1,6 +1,0 @@
-package com.human.cal;
-
-public class CalClass {
-	private double price1, price2, price3, price4;
-	private String = "";
-}
