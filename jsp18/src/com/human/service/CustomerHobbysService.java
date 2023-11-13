@@ -94,7 +94,6 @@ public class CustomerHobbysService {
 
 
 	public static void update(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
 		
 		customerDao.update(Integer.parseInt(request.getParameter("id")),
 				Double.parseDouble(request.getParameter("newHeight")));

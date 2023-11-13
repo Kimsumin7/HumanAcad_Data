@@ -11,81 +11,56 @@ import com.human.dto.CustomerHobbyDto;
 import com.human.dto.HobbyDto;
 import com.human.util.DBConn;
 
-//ctr+a 모든 코드 선택 ctr+shift+f 코드정리
-public class CustomerHobbyDao {	
-	public ArrayList<CustomerHobbyDto> selecAllCustomerAndHobby() {
-		ArrayList<CustomerHobbyDto> resultDtos = new ArrayList<CustomerHobbyDto>();
-//		select customer.*,hobby.hobby from customer, hobby
-//		where customer.id=hobby.id;
-		ResultSet rs = DBConn.statementQuery(String.format(
-				"select customer.*,hobby.hobby from customer, hobby " + 
-				"where customer.id=hobby.id(+)"));
+public class CustomerHobbyDao {
+    public ArrayList<CustomerHobbyDto> selecAllCustomerAndHobby() {
+        ArrayList<CustomerHobbyDto> resultDtos = new ArrayList<CustomerHobbyDto>();
+        ResultSet rs = DBConn.statementQuery("select customer.*, hobby.hobby from customer, hobby " +
+                "where customer.id=hobby.id(+)");
 
-		try {
-			while (rs.next()) {
-				resultDtos.add(new CustomerHobbyDto(
-						rs.getInt("id"),
-						rs.getString("name"),
-						rs.getDouble("height"),
-						rs.getTimestamp("birthday").toLocalDateTime(),
-						new HobbyDto(rs.getInt("id"),rs.getString("hobby"))
-					)
-				);
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        try {
+            while (rs.next()) {
+                resultDtos.add(new CustomerHobbyDto(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getDouble("height"),
+                        rs.getTimestamp("birthday").toLocalDateTime(),
+                        new HobbyDto(rs.getInt("id"), rs.getString("hobby"))
+                    )
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-		return resultDtos;
-	}
+        return resultDtos;
+    }
 
-	public CustomerHobbyDto selectOneCustomerAndHobby(int id, String hobby) {
-		CustomerHobbyDto resultDto = null;
-//		select customer.*,hobby.hobby from customer, hobby
-//		where customer.id=hobby.id;
+    public CustomerHobbyDto selectOneCustomerAndHobby(int id, String hobby) {
+        CustomerHobbyDto resultDto = null;
+        String sql = "select customer.*, hobby.hobby from customer, hobby " +
+            "where customer.id=hobby.id(+) and customer.id=" + id + " and hobby.hobby is null";
 
-//id가 있을때
-//select customer.*,hobby.hobby from customer, hobby
-//where customer.id=hobby.id(+) 
-//and customer.id=31 and hobby.hobby is null;
+        if (!hobby.isEmpty()) {
+            sql = "select customer.*, hobby.hobby from customer, hobby " +
+                "where customer.id=hobby.id(+) and customer.id=" + id + " and hobby.hobby='" + hobby + "'";
+        }
 
-//id가 없을때
-//select customer.*,hobby.hobby from customer, hobby
-//where customer.id=hobby.id(+) 
-//and customer.id=101 and hobby.hobby ='1';
+        ResultSet rs = DBConn.statementQuery(sql);
 
-		String sql="";
-		if(hobby.equals("")) {
-			
-			sql="select customer.*,hobby.hobby from customer, hobby " + 
-					"where customer.id=hobby.id(+) and customer.id="+id+" and hobby.hobby is null";
-		}else {
-			sql="select customer.*,hobby.hobby from customer, hobby " + 
-					"where customer.id=hobby.id(+) and customer.id="+id+" and hobby.hobby='"+hobby+"'";
-			
-		}
-		ResultSet rs = DBConn.statementQuery(String.format(sql));
+        try {
+            while (rs.next()) {
+                resultDto = new CustomerHobbyDto(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getDouble("height"),
+                        rs.getTimestamp("birthday").toLocalDateTime(),
+                        new HobbyDto(rs.getInt("id"), rs.getString("hobby"))
+                    );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-		try {
-			while (rs.next()) {
-				resultDto=new CustomerHobbyDto(
-						rs.getInt("id"),
-						rs.getString("name"),
-						rs.getDouble("height"),
-						rs.getTimestamp("birthday").toLocalDateTime(),
-						new HobbyDto(rs.getInt("id"),rs.getString("hobby"))
-					);
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return resultDto;		
-	}
-	
-	
-
-	
+        return resultDto;
+    }
 }

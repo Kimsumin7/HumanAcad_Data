@@ -10,4 +10,16 @@
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="javax.print.attribute.standard.MediaSize.Other"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="java.util.Objects"/>
+<fullyQualifiedTypeName name="com.human.dto.JobHistoryDto"/>
+<fullyQualifiedTypeName name="com.human.util.DBConn"/>
+<fullyQualifiedTypeName name="com.human.dto.EmployeesDto"/>
+<fullyQualifiedTypeName name="com.human.dao.CategoryEmployeesDao"/>
+<fullyQualifiedTypeName name="com.human.dto.CategoryEmployeesDto"/>
+<fullyQualifiedTypeName name="com.human.service.CategoryEmployeesService"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.human.dao.CustomerDao"/>
+<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+<fullyQualifiedTypeName name="com.human.dto.CustomerDto"/>
 </qualifiedTypeNameHistroy>

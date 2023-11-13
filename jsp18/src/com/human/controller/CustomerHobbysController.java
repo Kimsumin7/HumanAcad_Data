@@ -24,7 +24,6 @@ public class CustomerHobbysController extends HttpServlet {
      */
     public CustomerHobbysController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

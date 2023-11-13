@@ -102,6 +102,9 @@
 		<item value="org.springsource.sts.package:3.9.11.201912161153-RELEASE-e412"/>
 		<item value="org.springsource.sts:3.9.11.201912161153-RELEASE"/>
 	</list>
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\admin\Downloads\86ajax"/>
+	</list>
 	<section name="NewWizardAction">
 		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
@@ -112,6 +115,21 @@
 			<item value="org.eclipse.jst.j2ee.internal"/>
 			<item value="org.eclipse.wst.jsdt.ui.java"/>
 			<item value="org.eclipse.pde.PDE"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\admin\Documents\카카오톡 받은 파일\찐최종\찐최종\gymReal"/>
+			<item value="C:\Users\admin\Documents\카카오톡 받은 파일\찬영이를 위한 짐리얼\찬영이를 위한 짐리얼\gymReal"/>
+			<item value="C:\Users\admin\Documents\카카오톡 받은 파일\gymReal"/>
+			<item value="C:\Users\admin\Documents\카카오톡 받은 파일\gymReal최종"/>
+			<item value="C:\Users\admin\Downloads\86ajax"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
 		</list>
 	</section>
 </section>

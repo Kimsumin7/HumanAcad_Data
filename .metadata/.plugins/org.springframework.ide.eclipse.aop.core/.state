@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aop-reference-model/>
+<aop-reference-model>
+<aop-project name="10transaction"/>
+<aop-project name="11springFileUpload"/>
+<aop-project name="04springBoard"/>
+<aop-project name="02security"/>
+<aop-project name="06board"/>
+<aop-project name="01security"/>
+<aop-project name="04security"/>
+<aop-project name="01humanCrud"/>
+<aop-project name="02springHowToUse"/>
+<aop-project name="05CustommerInformation"/>
+<aop-project name="08Rest"/>
+<aop-project name="12boardFileUpload"/>
+<aop-project name="03security"/>
+<aop-project name="01springStart"/>
+<aop-project name="09replyBoard"/>
+</aop-reference-model>
