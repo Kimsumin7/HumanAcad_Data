@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href=RedirectServlet?id=abc&pw=abc>Redirect전송</a>
+<a href=DispatcherServlet?id=abc&pw=abc>Dispatcher전송</a>
+--사용주가 네이버,구글 다음 페이지를 선택해서 해당페이지로 이동하는 프로그램구현
+<form action=SiteMove method=get>
+	<select name="site">
+    <option value="http://www.naver.com">네이버</option>
+    <option value="http://www.daum.net">다음</option>
+    <option value="http://www.google.com">구글</option>
+    </select>
+    <input type="submit" value="전송">
+</form>
+--나이를 입력받아 성인만 들어갈수 있는 페이지를 작성해서 들어 온사람의 나이를 출력하시오.
+시작
+<form action=SiteMove2 method=get>
+	나이:<input type="text" name=age>
+    <input type="submit" value="전송">
+</form>
+--아이디와 패스워드를 입력받아  id가 java 패스워드가 1234일때만 로그인 성공페이지로 이동하는 
+--서블릿을 만들어 보자.
+--실패시 다시 입력받을 수 있는 페이지로이동하고 실패메시지를 보여주자.
+
+</body>
+</html>
